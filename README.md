@@ -4,6 +4,10 @@
 ###
 
 <h1 align="center" >Durian.js framework</h1>
+
+![](https://img.shields.io/github/languages/code-size/cheng-alvin/durian.js) ![](https://img.shields.io/github/license/cheng-alvin/durian.js)
+
+
 Welcome to the official durian.js source tree! This is where the contents of the Durian project are held. If you did not know, Durian.js is a lightweight Javascript framework that allows for an easier time dealing with HTML by allowing for dynamic components with custom HTML tags. Let's throw out all the trash and garbage that causes slow apps and huge bundle sizes and start with plain old Javascript—no more Virtual DOMs or compilers, just HTML! How simple!
 
 # License
