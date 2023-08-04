@@ -1,0 +1,18 @@
+{
+  "name": "durian.js",
+  "repository": "https://github.com/cheng-alvin/durian.js.git",
+  "author": "Alvin Cheng <88267875+cheng-alvin@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/core"
+  ],
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "eslint": "^8.46.0"
+  }
+}
