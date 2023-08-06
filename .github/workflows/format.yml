@@ -3,10 +3,10 @@ name: Format Code
 on:
   push:
     branches:
-      - main  # Change this to your main branch name
+      - main # Change this to your main branch name
   pull_request:
     branches:
-      - main  # Change this to your main branch name
+      - main # Change this to your main branch name
 
 jobs:
   format:
@@ -24,8 +24,8 @@ jobs:
 
       - name: Commit formatted code
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
+          git config --local user.email "cheng-alvin@users.noreply.github.com"
+          git config --local user.name "Alvin cheng"
           git add .
           git diff --quiet && git diff --staged --quiet || git commit -m "Format code with Prettier"
           git push
