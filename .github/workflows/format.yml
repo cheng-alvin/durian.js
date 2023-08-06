@@ -25,7 +25,7 @@ jobs:
       - name: Commit formatted code
         run: |
           git config --local user.email "cheng-alvin@users.noreply.github.com"
-          git config --local user.name "Alvin cheng"
+          git config --local user.name "Alvin Cheng"
           git add .
-          git diff --quiet && git diff --staged --quiet || git commit -m "Format code with Prettier"
+          git commit -m "Format code with Prettier"
           git push
