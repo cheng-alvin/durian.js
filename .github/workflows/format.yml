@@ -28,4 +28,4 @@ jobs:
           git config --local user.name "Alvin Cheng"
           git add .
           git commit -m "Format code with Prettier"
-          git push
+          git diff --quiet && git diff --staged --quiet || git push
