@@ -28,3 +28,4 @@ jobs:
           git config --local user.name "GitHub Actions"
           git add .
           git diff --quiet && git diff --staged --quiet || git commit -m "Format code with Prettier"
+          git push
