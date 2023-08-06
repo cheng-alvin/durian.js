@@ -1,0 +1,30 @@
+name: Run Linter
+
+on:
+  push:
+    branches:
+      - main # Adjust this to your main branch name
+  pull_request:
+    branches:
+      - main # Adjust this to your main branch name
+
+jobs:
+  lint:
+    name: Run Linter
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set Up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14 # Adjust the Node.js version as needed
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Run `yarn lint`
+        run: yarn lint # Adjust this command if your linting script has a different name
+
