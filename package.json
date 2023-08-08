@@ -3,6 +3,7 @@
   "repository": "https://github.com/cheng-alvin/durian.js.git",
   "author": "Alvin Cheng <88267875+cheng-alvin@users.noreply.github.com>",
   "license": "MIT",
+  "description": "Durian.js is a lightweight Javascript framework that allows for custom HTML tag to create interactive components for large applications! Easy to learn, light and fun to develop with!",
   "private": true,
   "workspaces": [
     "packages/core"
