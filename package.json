@@ -6,7 +6,8 @@
   "description": "Durian.js is a lightweight Javascript framework that allows for custom HTML tag to create interactive components for large applications! Easy to learn, light and fun to develop with!",
   "private": true,
   "workspaces": [
-    "packages/core"
+    "packages/core",
+    "packages/sample"
   ],
   "scripts": {
     "lint": "eslint .",
