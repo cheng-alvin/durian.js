@@ -1,4 +1,3 @@
-// @ts-nocheck `webpack.config.js` is a config file and does not require checking.
 const path = require("path");
 
 module.exports = {
