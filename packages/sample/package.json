@@ -7,7 +7,7 @@
   "author": "Alvin Cheng <88267875+cheng-alvin@users.noreply.github.com>",
   "private": true,
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build": "yarn webpack --config webpack.config.js"
   },
   "dependencies": {
     "@durian.js/core": "0.0.0"
