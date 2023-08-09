@@ -15,7 +15,7 @@
   \****************************/
 /***/ ((module) => {
 
-eval("const durian = \"hello! 69696\";\nmodule.exports = durian;\n\n\n//# sourceURL=webpack://@durian.js/sample/../core/src/index.js?");
+eval("function durian(arg) {\n  return document.querySelector(`${arg}`);\n}\n\nmodule.exports = durian;\n\n\n//# sourceURL=webpack://@durian.js/sample/../core/src/index.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("const durian = \"hello! 69696\";\nmodule.exports = durian;\n\n\n//# source
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _durian_js_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @durian.js/core */ \"../core/src/index.js\");\n/* harmony import */ var _durian_js_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_durian_js_core__WEBPACK_IMPORTED_MODULE_0__);\n// eslint-disable-next-line\n// @ts-ignore - The `@durian.js/core` is present in monorepo.\n\nconsole.log((_durian_js_core__WEBPACK_IMPORTED_MODULE_0___default()));\n\n\n//# sourceURL=webpack://@durian.js/sample/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _durian_js_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @durian.js/core */ \"../core/src/index.js\");\n/* harmony import */ var _durian_js_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_durian_js_core__WEBPACK_IMPORTED_MODULE_0__);\n// eslint-disable-next-line\n// @ts-ignore - The `@durian.js/core` is present in monorepo.\n\nconsole.log(_durian_js_core__WEBPACK_IMPORTED_MODULE_0___default()(\"durian-component\"));\n\n\n//# sourceURL=webpack://@durian.js/sample/./src/index.js?");
 
 /***/ })
 
