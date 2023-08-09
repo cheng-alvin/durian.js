@@ -6,6 +6,9 @@
   "repository": "https://github.com/cheng-alvin/durian.js.git",
   "author": "Alvin Cheng <88267875+cheng-alvin@users.noreply.github.com>",
   "private": true,
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
   "dependencies": {
     "@durian.js/core": "0.0.0"
   },
