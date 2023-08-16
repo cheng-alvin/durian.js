@@ -4,13 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Durian.js sample application</title>
-    <script src="./app.js"></script>
-
-    <durian-component name="title-text">
-      <p>Let's start coding with Durian.js!</p>
-    </durian-component>
+    <script src="./build.js"></script>
   </head>
   <body>
-    <title-text />
+    <my-first-component></my-first-component>
+    <my-first-component></my-first-component>
+    <my-first-component></my-first-component>
+    <my-first-component></my-first-component>
+    <my-first-component></my-first-component>
   </body>
 </html>
+
+<durian-component name="my-first-component">
+  <p>Hello world</p>
+</durian-component>
