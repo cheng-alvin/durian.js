@@ -1,7 +1,6 @@
-class Durian {
-  constructor() {
-    console.log("Hello from durian");
-  }
-}
+import { DurianComponent } from "./durianComponent.js";
 
-export default Durian;
+export default function __durian__() {
+  customElements.get("durian-component") ||
+    customElements.define("durian-component", DurianComponent);
+}
