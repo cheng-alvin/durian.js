@@ -1,2 +1,2 @@
-import Durian from "@durian.js/core";
-new Durian();
+import _ from "@durian.js/core";
+_();
