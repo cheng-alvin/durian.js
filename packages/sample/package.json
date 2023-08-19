@@ -1,0 +1,18 @@
+{
+  "name": "@durian.js/sample",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": "https://github.com/cheng-alvin/durian.js.git",
+  "author": "Alvin Cheng <88267875+cheng-alvin@users.noreply.github.com>",
+  "private": true,
+  "scripts": {
+    "build": "yarn webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "@durian.js/core": "0.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}

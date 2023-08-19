@@ -2,6 +2,7 @@
   "name": "@durian.js/core",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "./src/index.js",
   "repository": "https://github.com/cheng-alvin/durian.js.git",
   "author": "Alvin Cheng <88267875+cheng-alvin@users.noreply.github.com>",
   "private": true
