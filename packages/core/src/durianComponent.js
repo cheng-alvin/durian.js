@@ -1,11 +1,9 @@
 import { componentFactory } from "./component.js";
+import { DurianPrimitive } from "./durianPrimitive.js";
 import __durian__ from "./index.js";
 
-export class DurianComponent extends HTMLElement {
-  async connectedCallback() {
-    await this.sleep(10);
-    this.style = "display: none;";
-
+export class DurianComponent extends DurianPrimitive {
+  main() {
     const name = this.getAttribute("name");
     this.validateComponentAttributes();
 
@@ -28,10 +26,4 @@ export class DurianComponent extends HTMLElement {
       );
     }
   }
-
-  sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
 }
-
-__durian__();

@@ -1,8 +1,14 @@
 import { DurianComponent } from "./durianComponent.js";
+import { DurianProp } from "./durianProp.js";
 
 /**
  * Initializes the durian framework and checks basic browser compatibility when imported with a module format.
  * Otherwise, it will be initialized automatically when imported as a `<script>`.
+ *
+ * @author cheng-alvin
+ *
+ * @param {boolean} [bypassBrowserCheck=false] - Bypasses the browser `window` checks.
+ * @note Browser checks would always run when imported as a `<script>`.
  *
  * @example
  * import __durian__ from "@durian/core";
@@ -11,6 +17,15 @@ import { DurianComponent } from "./durianComponent.js";
  * // or
  *
  * require("@durian/core")();
+ *
+ * @example
+ * // Without browser checks
+ * import __durian__ from "@durian/core";
+ * __durian__(true);
+ *
+ * // or
+ *
+ * require("@durian/core")(true);
  *
  * @returns {void}
  */
@@ -43,3 +58,5 @@ export default function __durian__(bypassBrowserCheck = false) {
   customElements.define("durian-prop", DurianProp);
   window.durianExecuted = true;
 }
+
+__durian__();
