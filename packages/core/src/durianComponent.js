@@ -27,5 +27,3 @@ export class DurianComponent extends DurianPrimitive {
     }
   }
 }
-
-__durian__();
