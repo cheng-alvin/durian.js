@@ -1,4 +1,8 @@
 export class DurianPrimitive extends HTMLElement {
+  constructor() {
+    super();
+  }
+
   async connectedCallback() {
     await this.sleep(10);
     this.style = "display: none;";
