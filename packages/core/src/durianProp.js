@@ -1,5 +1,7 @@
 import { DurianPrimitive } from "./durianPrimitive";
 
 export class DurianProp extends DurianPrimitive {
-  main() {}
+  main() {
+    // console.log(this);
+  }
 }
