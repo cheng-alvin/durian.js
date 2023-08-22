@@ -1,6 +1,5 @@
 import { componentFactory } from "./component.js";
 import { DurianPrimitive } from "./durianPrimitive.js";
-import __durian__ from "./index.js";
 
 export class DurianComponent extends DurianPrimitive {
   main() {
