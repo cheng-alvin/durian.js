@@ -10,7 +10,7 @@ export class DurianComponent extends HTMLElement {
     this.validateComponentAttributes();
 
     const componentHTML = this.innerHTML;
-	const useShadow = this.getAttribute("useShadow") === "true" ? true : false 
+    const useShadow = this.getAttribute("useShadow") === "true" ? true : false;
 
     customElements.define(name, componentFactory(componentHTML, useShadow));
   }
