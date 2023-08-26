@@ -12,6 +12,8 @@ export class DurianComponent extends DurianPrimitive {
   constructor() {
     super();
     this.removedScripts = "";
+
+    // TODO Remove the ployfill!
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
         if (mutation.addedNodes.length > 0) {
