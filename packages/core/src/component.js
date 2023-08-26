@@ -3,7 +3,7 @@ export function componentFactory(innerHTML) {
     constructor() {
       super();
       this.attachShadow({ mode: "open" });
-      this.shadowRoot.innerHTML = innerHTML;
+      this.shadowRoot.innerHTML = innerHTML; // TODO Fix js not running as committed in 58c9038
     }
   };
 }
