@@ -1,6 +1,6 @@
 {
   "name": "@durian.js/core",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "main": "./src/index.js",
   "repository": "https://github.com/cheng-alvin/durian.js.git",
