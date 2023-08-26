@@ -5,9 +5,22 @@ export class DurianComponent extends DurianPrimitive {
   main() {
     const name = this.getAttribute("name");
     this.validateComponentAttributes();
-
-    const componentHTML = this.innerHTML;
+    const componentHTML = this.innerHTML + this.removedScripts;
     customElements.define(name, componentFactory(componentHTML));
+  }
+
+  constructor() {
+    super();
+    this.removedScripts = "";
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.addedNodes.length > 0) {
+          this.sanitizeContent(mutation.addedNodes);
+        }
+      });
+    });
+
+    observer.observe(this, { childList: true, subtree: true });
   }
 
   validateComponentAttributes() {
@@ -25,4 +38,18 @@ export class DurianComponent extends DurianPrimitive {
       );
     }
   }
+
+  // TODO remove temporary polyfill
+  // ------------------------------
+  sanitizeContent(nodes) {
+    nodes.forEach((node) => {
+      if (node.nodeName === "SCRIPT") {
+        this.removedScripts = this.removedScripts.concat(node.outerHTML);
+        node.remove(); // Remove <script> tags
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        this.sanitizeContent(node.childNodes);
+      }
+    });
+  }
+  // ------------------------------
 }
