@@ -1,3 +1,7 @@
+# TBD/TBD/2023 - Development Beta 1 🙌
+### `@durian.js/core` - 0.2.0
+- Added prop and data flow ([@cheng-alvin](https://github.com/cheng-alvin) in [#11](https://github.com/cheng-alvin/durian.js/pull/11))
+
 # 24/8/2023 - Initial release 🥳
 ### `@durian.js/core` - 0.1.0
 - Added `durian-components` for dynamic content and component referencing ([@cheng-alvin](https://github.com/cheng-alvin) in [#8](https://github.com/cheng-alvin/durian.js/pull/8))
