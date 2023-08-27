@@ -32,7 +32,6 @@ import { DurianProp } from "./durianProp.js";
 
 export default function __durian__(bypassBrowserCheck = false) {
   if (window.durianExecuted) return;
-  
   if (!bypassBrowserCheck) {
     if (typeof window === "undefined")
       throw new Error(
@@ -55,7 +54,6 @@ export default function __durian__(bypassBrowserCheck = false) {
   }
 
   customElements.define("durian-component", DurianComponent);
-  customElements.define("durian-prop", DurianProp);
   window.durianExecuted = true;
 }
 
