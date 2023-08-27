@@ -1,16 +1,28 @@
 import { componentFactory } from "./component.js";
-import __durian__ from "./index.js";
+import { DurianPrimitive } from "./durianPrimitive.js";
 
-export class DurianComponent extends HTMLElement {
-  async connectedCallback() {
-    await this.sleep(10);
-    this.style = "display: none;";
-
+export class DurianComponent extends DurianPrimitive {
+  main() {
     const name = this.getAttribute("name");
     this.validateComponentAttributes();
-
-    const componentHTML = this.innerHTML;
+    const componentHTML = this.innerHTML + this.removedScripts;
     customElements.define(name, componentFactory(componentHTML));
+  }
+
+  constructor() {
+    super();
+    this.removedScripts = "";
+
+    // TODO Remove the ployfill!
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.addedNodes.length > 0) {
+          this.sanitizeContent(mutation.addedNodes);
+        }
+      });
+    });
+
+    observer.observe(this, { childList: true, subtree: true });
   }
 
   validateComponentAttributes() {
@@ -29,9 +41,17 @@ export class DurianComponent extends HTMLElement {
     }
   }
 
-  sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
+  // TODO remove temporary polyfill
+  // ------------------------------
+  sanitizeContent(nodes) {
+    nodes.forEach((node) => {
+      if (node.nodeName === "SCRIPT") {
+        this.removedScripts = this.removedScripts.concat(node.outerHTML);
+        node.remove(); // Remove <script> tags
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        this.sanitizeContent(node.childNodes);
+      }
+    });
   }
+  // ------------------------------
 }
-
-__durian__();
