@@ -10,6 +10,11 @@ import { DurianProp } from "./durianProp.js";
  * @param {boolean} [bypassBrowserCheck=false] - Bypasses the browser `window` checks.
  * @note Browser checks would always run when imported as a `<script>`.
  *
+ * @author cheng-alvin
+ *
+ * @param {boolean} [bypassBrowserCheck=false] - Bypasses the browser `window` checks.
+ * @note Browser checks would always run when imported as a `<script>`.
+ *
  * @example
  * import __durian__ from "@durian/core";
  * __durian__();
@@ -55,7 +60,6 @@ export default function __durian__(bypassBrowserCheck = false) {
   }
 
   customElements.define("durian-component", DurianComponent);
-  customElements.define("durian-prop", DurianProp);
   window.durianExecuted = true;
 }
 
