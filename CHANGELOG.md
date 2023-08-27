@@ -1,6 +1,6 @@
 # --/--/2023 - Development beta 2 🙌
 ### `@durian.js/core` - 0.2.0
-- Added prop and data flow ([@cheng-alvin](https://github.com/cheng-alvin) in [#11](https://github.com/cheng-alvin/durian.js/pull/11))
+- Added _proper_ support for executing `<script>` tags in Durian.js ([@cheng-alvin](https://github.com/cheng-alvin) in [#15](https://github.com/cheng-alvin/durian.js/pull/15))
 
 # 24/8/2023 - Initial release 🥳
 ### `@durian.js/core` - 0.1.0
