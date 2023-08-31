@@ -1,3 +1,11 @@
+---
+name: Feature request
+about: A feature request template for requesting and giving details about feature requests
+title: 'My new awesome feature request!'
+labels: ''
+assignees: ''
+---
+
 ## ✨Design documentation✨
 [Introduce your feature/design]
 
