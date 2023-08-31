@@ -1,5 +1,5 @@
 ## ✨Design documentation✨
-[Introduce your design documentation]
+[Introduce your feature/design]
 
 ### Sample usage 👨‍💻
 [Introduce & explain the sample usage]
