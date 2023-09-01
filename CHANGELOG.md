@@ -9,6 +9,9 @@
 
 - Added `script` example in HTML markup ([@cheng-alvin](https://github.com/cheng-alvin) in [#15](https://github.com/cheng-alvin/durian.js/pull/15))
 
+### Miscellaneous
+- Added and customised issue templates ([@cheng-alvin](https://github.com/cheng-alvin) in [#17](https://github.com/cheng-alvin/durian.js/pull/17))
+- Bumped versions for release ([@cheng-alvin](https://github.com/cheng-alvin) in [#19](https://github.com/cheng-alvin/durian.js/pull/19))
 # 24/8/2023 - Initial release 🥳
 
 ### `@durian.js/core` - 0.1.0
