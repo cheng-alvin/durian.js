@@ -41,9 +41,6 @@ We welcome contributions to the framework via Github version control. Please rea
      ```
      git checkout -b <branch>
      ```   
-3. **Open a Pull request**
-   
-     Head over to the [Pull request](https://github.com/cheng-alvin/durian.js/pulls) tab to open a Pull request to merge your branch into `main`.
 
 1. **Update CHANGELOG**
    
@@ -55,5 +52,6 @@ All done for now!
 Remember when you are contributing, please follow the [Github guidelines](https://docs.github.com/en/site-policy/github-terms/github-community-guidelines) and the [CONTRIBUTION.md](https://github.com/cheng-alvin/durian.js/blob/6619a4e604c754f221c3abf580578c5ad2f23147/CONTRIBUTING.md) guidelines for more information and better integration/style for the codebase!
 
 Thank you for contributing ❤️!
+
 ---
 Made with love by [@cheng-alvin](https://github.com/cheng-alvin) in 2023
