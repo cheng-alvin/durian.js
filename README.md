@@ -3,7 +3,7 @@
 
 ###
 
-<h1 align="center" >Durian.js framework</h1>
+<h1 align="center" >Durian.js</h1>
 
 ![](https://img.shields.io/github/languages/code-size/cheng-alvin/durian.js) ![](https://img.shields.io/github/license/cheng-alvin/durian.js) ![](https://img.shields.io/github/issues/cheng-alvin/durian.js) ![](https://img.shields.io/github/issues-pr/cheng-alvin/durian.js)
 
