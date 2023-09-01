@@ -18,3 +18,6 @@ That's where Durian.js comes into play, Durian drops away the heavy baggage that
 ### 🔁 CHANGELOG 
 
 The changelog of the durian.js software is released in a tag format, although the releases are avalible in the [releases](https://github.com/cheng-alvin/durian.js/releases) tab, you can also find it inside the [`CHANGELOG.md`](https://github.com/cheng-alvin/durian.js/blob/main/CHANGELOG.md) file for a more detailed explaination and full history.
+
+---
+README file was inspired from [dotenv's README](https://github.com/motdotla/dotenv)
