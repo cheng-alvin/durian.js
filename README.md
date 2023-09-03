@@ -20,4 +20,4 @@ That's where Durian.js comes into play, Durian drops away the heavy baggage that
 The changelog of the durian.js software is released in a tag format, although the releases are avalible in the [releases](https://github.com/cheng-alvin/durian.js/releases) tab, you can also find it inside the [`CHANGELOG.md`](https://github.com/cheng-alvin/durian.js/blob/main/CHANGELOG.md) file for a more detailed explaination and full history.
 
 ---
-Copyright (c) 2023 Alvin Cheng, all rights reserved.
+Copyright (c) 2023 [Alvin Cheng](https://github.com/cheng-alvin)
