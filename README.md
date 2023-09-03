@@ -19,39 +19,5 @@ That's where Durian.js comes into play, Durian drops away the heavy baggage that
 
 The changelog of the durian.js software is released in a tag format, although the releases are avalible in the [releases](https://github.com/cheng-alvin/durian.js/releases) tab, you can also find it inside the [`CHANGELOG.md`](https://github.com/cheng-alvin/durian.js/blob/main/CHANGELOG.md) file for a more detailed explaination and full history.
 
-## 💻 Contributing code
-We welcome contributions to the framework via Github version control. Please read the steps below to understand the Durian code contribution and feature development processes that may be important while contributing your own code!
-
-### 🧰 Prerequisites and requirements
-- 🐧 Unix/Linux like operating system (WSL is fine)
-- 🧶 Yarn CLI (>= v1.22)
-- 📦 Node.js (>= v18.15)
-- 🔁 Git (Any version is fine)
-
-### 📝 Steps
-1. **Clone/Fork the repository**
-   
-     Make your own copy of the Durian source tree by cloning it to your local machine.
-     ```
-     git clone https://github.com/cheng-alvin/durian.js
-     ```
-1. **Create a branch**
-   
-     Create a branch to be merged into `main` in the furture when the feature is ready.
-     ```
-     git checkout -b <branch>
-     ```   
-
-1. **Update CHANGELOG**
-   
-     Update the change log and describe your changes in your pull request!
-   
-All done for now!
-
-### 🚨 Note
-Remember when you are contributing, please follow the [Github guidelines](https://docs.github.com/en/site-policy/github-terms/github-community-guidelines) and the [CONTRIBUTION.md](https://github.com/cheng-alvin/durian.js/blob/6619a4e604c754f221c3abf580578c5ad2f23147/CONTRIBUTING.md) guidelines for more information and better integration/style for the codebase!
-
-Thank you for contributing ❤️!
-
 ---
-Made with love by [@cheng-alvin](https://github.com/cheng-alvin) in 2023
+Copyright (c) 2023 Alvin Cheng, all rights reserved.
