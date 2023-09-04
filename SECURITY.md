@@ -1,5 +1,5 @@
 # Security Policy 🔐
-<img src="https://github.com/cheng-alvin/durian.js/blob/e2cb327e0e5d7067afc4230326dfcfc163296767/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-01%20150235.png" alt="dotenv" align="right" width="200" />
+<img src="https://github.com/cheng-alvin/durian.js/blob/e2cb327e0e5d7067afc4230326dfcfc163296767/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-01%20150235.png" alt="logo" align="right" width="100" />
 
 Welcome to the security policy documentation for Durian.js! As organizations and individuals increasingly rely on web applications for critical tasks, ensuring the security of these applications has become paramount. Security is a shared responsibility, encompassing not only the core development team but also the broader community of contributors, users, and maintainers.
 
