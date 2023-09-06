@@ -1,4 +1,4 @@
-import { shadowRootEval } from "./shadowRootEval";
+// import { shadowRootEval } from "./shadowRootEval";
 
 export function componentFactory(innerHTML) {
   innerHTML = innerHTML.replaceAll("&lt;", "<").replaceAll("&gt;", ">");
