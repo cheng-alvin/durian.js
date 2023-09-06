@@ -13,6 +13,20 @@ export class DurianComponent extends DurianPrimitive {
     customElements.define(name, componentFactory(componentHTML));
   }
 
+  constructor() {
+    super();
+    this.executed = false;
+    const observer = new MutationObserver((mutations) => {
+      if (this.executed) return;
+
+      this.innerHTML = this.innerHTML
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;");
+      this.executed = true;
+    });
+
+    observer.observe(this, { childList: true, subtree: true });
+  }
   validateComponentAttributes() {
     const name = this.getAttribute("name");
 
