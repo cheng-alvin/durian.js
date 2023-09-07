@@ -1,4 +1,4 @@
-# --/--/2023 - Development beta 2 🙌
+# 8/9/2023 - Development beta 2 🙌
 ### `@durian.js/core` - 0.2.0
 - Added _proper_ support for executing `<script>` tags in Durian.js ([@cheng-alvin](https://github.com/cheng-alvin) in [#15](https://github.com/cheng-alvin/durian.js/pull/15))
 ### `@durian.js/sample` - 1.1.0
