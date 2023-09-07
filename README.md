@@ -1,6 +1,6 @@
 # Durian.js ![](https://img.shields.io/github/v/tag/cheng-alvin/durian.js)
 ![](https://img.shields.io/github/languages/code-size/cheng-alvin/durian.js) ![](https://img.shields.io/github/license/cheng-alvin/durian.js) ![](https://img.shields.io/github/issues/cheng-alvin/durian.js) ![](https://img.shields.io/github/issues-pr/cheng-alvin/durian.js)
-<img src="https://github.com/cheng-alvin/durian.js/blob/e2cb327e0e5d7067afc4230326dfcfc163296767/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-01%20150235.png" alt="logo" align="right" width="150" />
+<img src="https://github.com/cheng-alvin/durian.js/blob/e2cb327e0e5d7067afc4230326dfcfc163296767/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-09-01%20150235.png" alt="logo" align="right" width="200" />
 
 
 Welcome to the official durian.js source tree! This is where the contents of the Durian project are held. If you did not know, Durian.js is a lightweight Javascript framework that allows for an easier time dealing with HTML by allowing for dynamic components with custom HTML tags. Let's throw out all the trash and garbage that causes slow apps and huge bundle sizes and start with plain old Javascript—no more Virtual DOMs or compilers, just HTML! How simple!
