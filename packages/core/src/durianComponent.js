@@ -16,7 +16,7 @@ export class DurianComponent extends DurianPrimitive {
   constructor() {
     super();
     this.executed = false;
-    const observer = new MutationObserver((mutations) => {
+    const observer = new MutationObserver(() => {
       if (this.executed) return;
 
       this.innerHTML = this.innerHTML
