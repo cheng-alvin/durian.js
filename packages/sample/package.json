@@ -9,7 +9,7 @@
     "build": "yarn webpack --config webpack.config.js"
   },
   "dependencies": {
-    "@durian.js/core": "^0.2.0"
+    "@durian.js/core": "^0.3.0"
   },
   "devDependencies": {
     "webpack": "^5.88.2",
