@@ -1,4 +1,6 @@
+
 # Security Policy 🔐
+
 Welcome to the security policy documentation for Durian.js! As organizations and individuals increasingly rely on web applications for critical tasks, ensuring the security of these applications has become paramount. Security is a shared responsibility, encompassing not only the core development team but also the broader community of contributors, users, and maintainers.
 
 ### Reporting a Vulnerability

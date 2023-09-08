@@ -1,4 +1,4 @@
-# --/--/2023 - Development beta 2 🙌
+# 8/9/2023 - Development beta 2 🙌
 
 ### `@durian.js/core` - 0.2.0
 
