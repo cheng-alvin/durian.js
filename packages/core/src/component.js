@@ -6,9 +6,12 @@ export function componentFactory(innerHTML) {
       // Solution? - Alvin
       this.shadowRoot.querySelectorAll("script").forEach((script) => {
         const newScript = document.createElement("script");
-        newScript.textContent = script.textContent;
-        this.shadowRoot.appendChild(newScript);
-        script.remove();
+        [...script.attributes].forEach((attr) => {
+          newScript.setAttribute(attr.name, attr.value);
+        });
+
+        newScript.innerHTML = script.innerHTML;
+        script.parentNode.replaceChild(newScript, script);
       });
     }
 
