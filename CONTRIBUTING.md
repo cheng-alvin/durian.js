@@ -70,4 +70,4 @@ if (love == angry) {
 ```
 
 ## Ready? Set! GO!
-Thanks for reading our contribution guide, now you are officially ready to contribute to Durian.js! Go ahead! Let's write some code! Have fun! 
+Thanks for reading our contribution guide, now you are officially ready to contribute to Durian.js! Go ahead! Let's write some code! Have fun! Submit a PR and watch your Durian.js contributions go live! 
