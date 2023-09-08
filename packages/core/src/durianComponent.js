@@ -5,26 +5,28 @@ export class DurianComponent extends DurianPrimitive {
   main() {
     const name = this.getAttribute("name");
     this.validateComponentAttributes();
-    const componentHTML = this.innerHTML + this.removedScripts;
+
+    const componentHTML = this.innerHTML
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;");
+
     customElements.define(name, componentFactory(componentHTML));
   }
 
   constructor() {
     super();
-    this.removedScripts = "";
+    this.executed = false;
+    const observer = new MutationObserver(() => {
+      if (this.executed) return;
 
-    // TODO Remove the ployfill!
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.addedNodes.length > 0) {
-          this.sanitizeContent(mutation.addedNodes);
-        }
-      });
+      this.innerHTML = this.innerHTML
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;");
+      this.executed = true;
     });
 
     observer.observe(this, { childList: true, subtree: true });
   }
-
   validateComponentAttributes() {
     const name = this.getAttribute("name");
 
@@ -40,18 +42,4 @@ export class DurianComponent extends DurianPrimitive {
       );
     }
   }
-
-  // TODO remove temporary polyfill
-  // ------------------------------
-  sanitizeContent(nodes) {
-    nodes.forEach((node) => {
-      if (node.nodeName === "SCRIPT") {
-        this.removedScripts = this.removedScripts.concat(node.outerHTML);
-        node.remove(); // Remove <script> tags
-      } else if (node.nodeType === Node.ELEMENT_NODE) {
-        this.sanitizeContent(node.childNodes);
-      }
-    });
-  }
-  // ------------------------------
 }

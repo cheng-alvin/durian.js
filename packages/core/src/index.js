@@ -6,6 +6,8 @@ import { DurianComponent } from "./durianComponent.js";
  *
  * @author cheng-alvin
  *
+ * @global - Uses `durianExecuted` to check if the function has been executed already.
+ *
  * @param {boolean} [bypassBrowserCheck=false] - Bypasses the browser `window` checks.
  * @note Browser checks would always run when imported as a `<script>`.
  *
