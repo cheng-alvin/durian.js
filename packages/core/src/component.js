@@ -9,7 +9,7 @@ export function componentFactory(innerHTML) {
       window.__durianData__.componentThis[uuid] = this.shadowRoot;
 
       this.injectJs(
-        `const component = window.__durianData__.componentThis["${uuid}"];`,
+        `if(!component) const component = window.__durianData__.componentThis["${uuid}"] `,
       );
 
       this.shadowRoot.querySelectorAll("script").forEach((script) => {
