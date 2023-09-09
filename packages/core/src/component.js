@@ -3,7 +3,6 @@ export function componentFactory(innerHTML) {
 
   return class Component extends HTMLElement {
     connectedCallback() {
-      // Solution? - Alvin
       this.shadowRoot.querySelectorAll("script").forEach((script) => {
         const newScript = document.createElement("script");
         [...script.attributes].forEach((attr) => {
