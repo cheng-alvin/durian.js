@@ -5,6 +5,13 @@ export function componentFactory(innerHTML) {
 
   return class Component extends DurianPrimitive {
     main() {
+      const uuid = crypto.randomUUID();
+      window.__durianData__.componentThis[uuid] = this.shadowRoot;
+
+      this.injectJs(
+        `const component = window.__durianData__.componentThis["${uuid}"];`,
+      );
+
       this.shadowRoot.querySelectorAll("script").forEach((script) => {
         const newScript = document.createElement("script");
         [...script.attributes].forEach((attr) => {
@@ -14,6 +21,12 @@ export function componentFactory(innerHTML) {
         newScript.innerHTML = script.innerHTML;
         script.parentNode.replaceChild(newScript, script);
       });
+    }
+
+    injectJs(src) {
+      const script = document.createElement("script");
+      script.innerText = src;
+      this.shadowRoot.appendChild(script);
     }
 
     constructor() {
