@@ -8,6 +8,7 @@ export function componentFactory(innerHTML) {
       const uuid = crypto.randomUUID();
       window.__durianData__.componentThis[uuid] = this.shadowRoot;
 
+      // TODO Allow only for single loop:
       this.injectJs(
         `if(!component) const component = window.__durianData__.componentThis["${uuid}"] `,
       );
