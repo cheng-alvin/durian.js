@@ -6,7 +6,8 @@ import { DurianComponent } from "./durianComponent.js";
  *
  * @author cheng-alvin
  *
- * @global - Uses `durianExecuted` to check if the function has been executed already.
+ * @global Uses `__durianData__.executed` to check if the function has been executed already.
+ * @note All durian.js data are stored under the `window.__durianData__` object namespace.
  *
  * @param {boolean} [bypassBrowserCheck=false] - Bypasses the browser `window` checks.
  * @note Browser checks would always run when imported as a `<script>`.
@@ -32,7 +33,7 @@ import { DurianComponent } from "./durianComponent.js";
  */
 
 export default function __durian__(bypassBrowserCheck = false) {
-  if (window.durianExecuted) return;
+  if (window.__durianData__.executed) return;
 
   if (!bypassBrowserCheck) {
     if (typeof window === "undefined")
@@ -56,7 +57,7 @@ export default function __durian__(bypassBrowserCheck = false) {
   }
 
   customElements.define("durian-component", DurianComponent);
-  window.durianExecuted = true;
+  window.__durianData__.executed = true;
 }
 
 __durian__();
