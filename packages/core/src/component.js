@@ -1,8 +1,10 @@
+import { DurianPrimitive } from "./durianPrimitive";
+
 export function componentFactory(innerHTML) {
   innerHTML = innerHTML.replaceAll("&lt;", "<").replaceAll("&gt;", ">");
 
-  return class Component extends HTMLElement {
-    connectedCallback() {
+  return class Component extends DurianPrimitive {
+    main() {
       this.shadowRoot.querySelectorAll("script").forEach((script) => {
         const newScript = document.createElement("script");
         [...script.attributes].forEach((attr) => {
