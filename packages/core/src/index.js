@@ -33,10 +33,10 @@ import { DurianComponent } from "./durianComponent.js";
  */
 
 export default function __durian__(bypassBrowserCheck = false) {
-  if (window.__durianData__.executed) return;
+  if (window?.__durianData__?.executed || false) return;
 
   if (!bypassBrowserCheck) {
-    if (typeof window.__durianData__ !== "undefined")
+    if (typeof window?.__durianData__ !== "undefined")
       throw new Error(
         "Detected data conflict in the reserved `window.__durianData__` object is already in use! Please rename the object for durian to work properly, all durian data are stored under the `window.__durianData__` object.",
       );
