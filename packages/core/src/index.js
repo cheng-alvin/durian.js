@@ -61,6 +61,7 @@ export default function __durian__(bypassBrowserCheck = false) {
     );
   }
 
+  window.__durianData__ = { componentThis: {} };
   customElements.define("durian-component", DurianComponent);
   window.__durianData__.executed = true;
 }
