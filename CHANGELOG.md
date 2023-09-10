@@ -3,6 +3,7 @@
 ### `@durian.js/core` - 0.3.0
 
 - Fixed and stabilize script execution feature ([@cheng-alvin](https://github.com/cheng-alvin) in [#20](https://github.com/cheng-alvin/durian.js/pull/20))
+- Allow component DOM functions to be exposed internally ([@cheng-alvin](https://github.com/cheng-alvin) in [#21](https://github.com/cheng-alvin/durian.js/pull/21))
 
 # 8/9/2023 - Development beta 2 🙌
 
