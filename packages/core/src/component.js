@@ -10,7 +10,7 @@ export function componentFactory(innerHTML) {
       window.__durianData__.componentThis[uuid] = this.shadowRoot;
 
       // TODO Encapsulate to file
-      const EXPOSURE_SCRIPT = `'use-strict'; if (typeof component === 'undefined') { const component = window.__durianData__.componentThis['${uuid}']; }`;
+      const EXPOSURE_SCRIPT = `'use-strict'; const component = window.__durianData__.componentThis['${uuid}'];`;
 
       // TODO Allow only for single loop:
       this.injectJs(EXPOSURE_SCRIPT);
