@@ -5,6 +5,8 @@ export function componentFactory(innerHTML) {
 
   return class Component extends DurianPrimitive {
     main() {
+      this.style = "display: block;";
+
       // TODO Change variable name `componentThis`
       const uuid = crypto.randomUUID();
       window.__durianData__.componentThis[uuid] = this.shadowRoot;
