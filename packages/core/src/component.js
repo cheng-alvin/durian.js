@@ -10,11 +10,7 @@ export function componentFactory(innerHTML) {
 
       // TODO Allow only for single loop:
       this.injectJs(
-        `
-        if (!component) {
-          const component = window.__durianData__.componentThis["${uuid}"];
-        }
-        `,
+        "'use-strict'; if (typeof component === 'undefined') { const component = window.__durianData__.componentThis['${uuid}']; }",
       );
 
       this.shadowRoot.querySelectorAll("script").forEach((script) => {
