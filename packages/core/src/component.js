@@ -9,12 +9,15 @@ export function componentFactory(innerHTML) {
       const uuid = crypto.randomUUID();
       window.__durianData__.componentThis[uuid] = this.shadowRoot;
 
+      // TODO Encapsulate to file
+      const EXPOSURE_SCRIPT = `'use-strict'; if (typeof component === 'undefined') { const component = window.__durianData__.componentThis['${uuid}']; }`;
+
       // TODO Allow only for single loop:
-      this.injectJs(
-        "'use-strict'; if (typeof component === 'undefined') { const component = window.__durianData__.componentThis['${uuid}']; }",
-      );
+      this.injectJs(EXPOSURE_SCRIPT);
 
       this.shadowRoot.querySelectorAll("script").forEach((script) => {
+        if (script.classList.contains("durian-generated-script")) return;
+
         const newScript = document.createElement("script");
         [...script.attributes].forEach((attr) => {
           newScript.setAttribute(attr.name, attr.value);
@@ -28,7 +31,8 @@ export function componentFactory(innerHTML) {
     injectJs(src) {
       const script = document.createElement("script");
       script.innerText = src;
-      this.shadowRoot.appendChild(script);
+      script.setAttribute("class", "durian-generated-script");
+      this.shadowRoot.prepend(script);
     }
 
     constructor() {
