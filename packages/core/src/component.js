@@ -10,8 +10,7 @@ export function componentFactory(innerHTML) {
       // TODO Change variable name `componentThis`
       const uuid = crypto.randomUUID();
       window.__durianData__.componentThis[uuid] = this.shadowRoot;
-
-      // TODO Encapsulate to file
+      
       const EXPOSURE_SCRIPT = `'use-strict'; const component = window.__durianData__.componentThis['${uuid}'];`;
 
       // TODO Allow only for single loop:
