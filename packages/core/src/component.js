@@ -11,9 +11,6 @@ export function componentFactory(innerHTML) {
       const uuid = crypto.randomUUID();
       window.__durianData__.componentThis[uuid] = this.shadowRoot;
 
-      // TODO Encapsulate to file
-      const EXPOSURE_SCRIPT = `'use-strict'; const component = window.__durianData__.componentThis['${uuid}'];`;
-
       // TODO Allow only for single loop:
       this.injectJs(EXPOSURE_SCRIPT);
 
