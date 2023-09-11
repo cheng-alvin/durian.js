@@ -1,3 +1,4 @@
+// TODO Add `import` line to import `EXPOSURE_SCRIPT` from `constants.js` 
 import { DurianPrimitive } from "./durianPrimitive";
 
 export function componentFactory(innerHTML) {
