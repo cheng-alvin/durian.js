@@ -11,8 +11,10 @@ export function componentFactory(innerHTML) {
       const uuid = crypto.randomUUID();
       window.__durianData__.componentThis[uuid] = this.shadowRoot;
 
+      // ---
       const EXPOSURE_SCRIPT = `'use-strict'; const component = window.__durianData__.componentThis['${uuid}'];`;
       this.injectJs(EXPOSURE_SCRIPT);
+      // ---
 
       this.shadowRoot.querySelectorAll("script").forEach((script) => {
         if (script.classList.contains("durian-generated-script")) return;
