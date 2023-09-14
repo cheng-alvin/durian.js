@@ -5,41 +5,71 @@ export function componentFactory(innerHTML) {
 
   return class Component extends DurianPrimitive {
     main() {
-      this.style = "display: block;";
+      this.sleep(10).then(() => {
+        this.style = "display: block;";
 
-      // TODO Change variable name `componentThis`
-      const uuid = crypto.randomUUID();
-      window.__durianData__.componentThis[uuid] = this.shadowRoot;
+        // ---
+        const EXPOSURE_SCRIPT = `'use-strict'; const component = window.__durianData__.componentThis['${this.componentUUID}'];`;
+        // ---
 
-      // ---
-      const EXPOSURE_SCRIPT = `'use-strict'; const component = window.__durianData__.componentThis['${uuid}'];`;
-      this.injectJs(EXPOSURE_SCRIPT);
-      // ---
+        const jsWrapper = document.createElement("div");
+        jsWrapper.setAttribute("class", "durian-js-wrapper");
+        jsWrapper.setAttribute("id", this.componentUUID);
+        jsWrapper.attachShadow({ mode: "open" });
 
-      this.shadowRoot.querySelectorAll("script").forEach((script) => {
-        if (script.classList.contains("durian-generated-script")) return;
+        //// this.injectJs(EXPOSURE_SCRIPT, jsWrapper);
 
-        const newScript = document.createElement("script");
-        [...script.attributes].forEach((attr) => {
-          newScript.setAttribute(attr.name, attr.value);
+        const executed = false;
+        const scripts = this.shadowRoot.querySelectorAll("script");
+        scripts.forEach((script, index) => {
+          if (executed) return;
+          if (script.classList.contains("durian-generated-script")) return;
+
+          const newScript = document.createElement("script");
+          [...script.attributes].forEach((attr) => {
+            newScript.setAttribute(attr.name, attr.value);
+          });
+
+          newScript.innerHTML = script.innerHTML;
+          jsWrapper.appendChild(newScript);
+          script.remove();
+
+          script.length === index ? (executed = true) : null;
         });
 
-        newScript.innerHTML = script.innerHTML;
-        script.parentNode.replaceChild(newScript, script);
+        this.shadowRoot.appendChild(jsWrapper);
+
+        if (executed)
+          this.removed.forEach((element) => {
+            this.shadowRoot.append(element);
+          });
       });
     }
 
-    injectJs(src) {
+    injectJs(src, wrapper) {
       const script = document.createElement("script");
       script.innerText = src;
       script.setAttribute("class", "durian-generated-script");
-      this.shadowRoot.prepend(script);
+      wrapper.append(script);
     }
 
     constructor() {
       super();
-      this.attachShadow({ mode: "closed" });
+
+      // TODO Change variable name `componentThis`
+      this.componentUUID = crypto.randomUUID();
+      window.__durianData__.componentThis[this.componentUUID] = this.shadowRoot;
+
+      this.attachShadow({ mode: "open" });
       this.shadowRoot.innerHTML = innerHTML;
+
+      this.removed = [];
+      this.shadowRoot.querySelectorAll("*").forEach((element) => {
+        if (!element.tagName.includes("-")) return;
+
+        this.removed.push(element);
+        element.remove();
+      });
     }
   };
 }
