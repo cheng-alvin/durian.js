@@ -19,7 +19,7 @@ export function componentFactory(innerHTML) {
 
         //// this.injectJs(EXPOSURE_SCRIPT, jsWrapper);
 
-        const executed = false;
+        let  executed = false;
         const scripts = this.shadowRoot.querySelectorAll("script");
         scripts.forEach((script, index) => {
           if (executed) return;
