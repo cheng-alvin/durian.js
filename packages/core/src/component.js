@@ -1,23 +1,24 @@
 import { DurianPrimitive } from "./durianPrimitive";
 
 export function componentFactory(innerHTML) {
+	console.log("Hello");
+
+
   innerHTML = innerHTML.replaceAll("&lt;", "<").replaceAll("&gt;", ">");
 
   return class Component extends DurianPrimitive {
     main() {
-      this.sleep(10).then(() => {
         this.style = "display: block;";
 
-        // ---
         const EXPOSURE_SCRIPT = `'use-strict'; const component = window.__durianData__.componentThis['${this.componentUUID}'];`;
-        // ---
 
         const jsWrapper = document.createElement("div");
+	    this.shadowRoot.appendChild(jsWrapper)
         jsWrapper.setAttribute("class", "durian-js-wrapper");
         jsWrapper.setAttribute("id", this.componentUUID);
         jsWrapper.attachShadow({ mode: "open" });
 
-        //// this.injectJs(EXPOSURE_SCRIPT, jsWrapper);
+        this.injectJs(EXPOSURE_SCRIPT, jsWrapper);
 
         const scripts = this.shadowRoot.querySelectorAll("script");
         scripts.forEach((script, index) => {
@@ -32,21 +33,20 @@ export function componentFactory(innerHTML) {
           jsWrapper.appendChild(newScript);
           script.remove();
 
-          if (index === scripts.length)
+          if (index === scripts.length - 1 )
             this.removed.forEach((element) => {
-              this.shadowRoot.append(element);
+              this.shadowRoot.appendChild(element)
             });
         });
 
-        this.shadowRoot.appendChild(jsWrapper);
-      });
     }
 
     injectJs(src, wrapper) {
+	    console.log("Hello")
       const script = document.createElement("script");
       script.innerText = src;
       script.setAttribute("class", "durian-generated-script");
-      wrapper.append(script);
+      wrapper.appendChild(script);
     }
 
     constructor() {
