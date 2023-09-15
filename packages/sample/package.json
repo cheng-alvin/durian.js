@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "build": "yarn webpack --config webpack.config.js",
-    "serve": "http-server ./public"
+    "serve": "http-server ./public/index.html"
   },
   "dependencies": {
     "@durian.js/core": "^0.3.0"
