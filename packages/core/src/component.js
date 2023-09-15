@@ -39,7 +39,7 @@ export function componentFactory(innerHTML) {
 
         this.shadowRoot.appendChild(jsWrapper);
 
-        if (executed)
+        if (index === scripts.length)
           this.removed.forEach((element) => {
             this.shadowRoot.append(element);
           });
