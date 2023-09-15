@@ -19,10 +19,8 @@ export function componentFactory(innerHTML) {
 
         //// this.injectJs(EXPOSURE_SCRIPT, jsWrapper);
 
-        let  executed = false;
         const scripts = this.shadowRoot.querySelectorAll("script");
         scripts.forEach((script, index) => {
-          if (executed) return;
           if (script.classList.contains("durian-generated-script")) return;
 
           const newScript = document.createElement("script");
@@ -33,8 +31,6 @@ export function componentFactory(innerHTML) {
           newScript.innerHTML = script.innerHTML;
           jsWrapper.appendChild(newScript);
           script.remove();
-
-          script.length === index ? (executed = true) : null;
         });
 
         this.shadowRoot.appendChild(jsWrapper);
