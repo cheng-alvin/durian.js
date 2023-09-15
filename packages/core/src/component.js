@@ -31,14 +31,14 @@ export function componentFactory(innerHTML) {
           newScript.innerHTML = script.innerHTML;
           jsWrapper.appendChild(newScript);
           script.remove();
+
+          if (index === scripts.length)
+            this.removed.forEach((element) => {
+              this.shadowRoot.append(element);
+            });
         });
 
         this.shadowRoot.appendChild(jsWrapper);
-
-        if (index === scripts.length)
-          this.removed.forEach((element) => {
-            this.shadowRoot.append(element);
-          });
       });
     }
 
