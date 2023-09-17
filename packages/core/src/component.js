@@ -5,37 +5,36 @@ export function componentFactory(innerHTML) {
 
   return class Component extends DurianPrimitive {
     main() {
-        this.style = "display: block;";
+      this.style = "display: block;";
 
-        const EXPOSURE_SCRIPT = `'use-strict'; const component = window.__durianData__.componentThis['${this.componentUUID}'];`;
+      const EXPOSURE_SCRIPT = `'use-strict'; const component = window.__durianData__.componentThis['${this.componentUUID}'];`;
 
-        const jsWrapper = document.createElement("div");
-	    this.shadowRoot.appendChild(jsWrapper)
-        jsWrapper.setAttribute("class", "durian-js-wrapper");
-        jsWrapper.setAttribute("id", this.componentUUID);
-        jsWrapper.attachShadow({ mode: "open" });
+      const jsWrapper = document.createElement("div");
+      this.shadowRoot.appendChild(jsWrapper);
+      jsWrapper.setAttribute("class", "durian-js-wrapper");
+      jsWrapper.setAttribute("id", this.componentUUID);
+      jsWrapper.attachShadow({ mode: "open" });
 
-        this.injectJs(EXPOSURE_SCRIPT, jsWrapper);
+      this.injectJs(EXPOSURE_SCRIPT, jsWrapper);
 
-        const scripts = this.shadowRoot.querySelectorAll("script");
-        scripts.forEach((script, index) => {
-          if (script.classList.contains("durian-generated-script")) return;
+      const scripts = this.shadowRoot.querySelectorAll("script");
+      scripts.forEach((script, index) => {
+        if (script.classList.contains("durian-generated-script")) return;
 
-          const newScript = document.createElement("script");
-          [...script.attributes].forEach((attr) => {
-            newScript.setAttribute(attr.name, attr.value);
-          });
-
-          newScript.innerHTML = script.innerHTML;
-          jsWrapper.appendChild(newScript);
-          script.remove();
-
-          if (index === scripts.length - 1 )
-            this.removed.forEach((element) => {
-              this.shadowRoot.appendChild(element)
-            });
+        const newScript = document.createElement("script");
+        [...script.attributes].forEach((attr) => {
+          newScript.setAttribute(attr.name, attr.value);
         });
 
+        newScript.innerHTML = script.innerHTML;
+        jsWrapper.appendChild(newScript);
+        script.remove();
+
+        if (index === scripts.length - 1)
+          this.removed.forEach((element) => {
+            this.shadowRoot.appendChild(element);
+          });
+      });
     }
 
     injectJs(src, wrapper) {
