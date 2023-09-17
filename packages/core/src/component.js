@@ -1,9 +1,6 @@
 import { DurianPrimitive } from "./durianPrimitive";
 
 export function componentFactory(innerHTML) {
-	console.log("Hello");
-
-
   innerHTML = innerHTML.replaceAll("&lt;", "<").replaceAll("&gt;", ">");
 
   return class Component extends DurianPrimitive {
@@ -42,7 +39,6 @@ export function componentFactory(innerHTML) {
     }
 
     injectJs(src, wrapper) {
-	    console.log("Hello")
       const script = document.createElement("script");
       script.innerText = src;
       script.setAttribute("class", "durian-generated-script");
