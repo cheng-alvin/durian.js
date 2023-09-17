@@ -7,12 +7,13 @@
   "private": true,
   "scripts": {
     "build": "yarn webpack --config webpack.config.js",
-    "serve": "http-server ./public/index.html"
+    "serve": "serve -p 5500"
   },
   "dependencies": {
     "@durian.js/core": "^0.3.0"
   },
   "devDependencies": {
+    "serve": "14.2.1",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   }
