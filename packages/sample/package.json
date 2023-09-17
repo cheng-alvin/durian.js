@@ -6,12 +6,14 @@
   "author": "Alvin Cheng <88267875+cheng-alvin@users.noreply.github.com>",
   "private": true,
   "scripts": {
-    "build": "yarn webpack --config webpack.config.js"
+    "build": "yarn webpack --config webpack.config.js",
+    "serve": "serve -p 5500"
   },
   "dependencies": {
     "@durian.js/core": "^0.3.0"
   },
   "devDependencies": {
+    "serve": "14.2.1",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   }

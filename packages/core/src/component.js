@@ -7,16 +7,18 @@ export function componentFactory(innerHTML) {
     main() {
       this.style = "display: block;";
 
-      // TODO Change variable name `componentThis`
-      const uuid = crypto.randomUUID();
-      window.__durianData__.componentThis[uuid] = this.shadowRoot;
-      
-      const EXPOSURE_SCRIPT = `'use-strict'; const component = window.__durianData__.componentThis['${uuid}'];`;
+      const EXPOSURE_SCRIPT = `'use-strict'; const component = window.__durianData__.componentThis['${this.componentUUID}'];`;
 
-      // TODO Allow only for single loop:
-      this.injectJs(EXPOSURE_SCRIPT);
+      const jsWrapper = document.createElement("div");
+      this.shadowRoot.appendChild(jsWrapper);
+      jsWrapper.setAttribute("class", "durian-js-wrapper");
+      jsWrapper.setAttribute("id", this.componentUUID);
+      jsWrapper.attachShadow({ mode: "open" });
 
-      this.shadowRoot.querySelectorAll("script").forEach((script) => {
+      this.injectJs(EXPOSURE_SCRIPT, jsWrapper);
+
+      const scripts = this.shadowRoot.querySelectorAll("script");
+      scripts.forEach((script, index) => {
         if (script.classList.contains("durian-generated-script")) return;
 
         const newScript = document.createElement("script");
@@ -25,21 +27,40 @@ export function componentFactory(innerHTML) {
         });
 
         newScript.innerHTML = script.innerHTML;
-        script.parentNode.replaceChild(newScript, script);
+        jsWrapper.appendChild(newScript);
+        script.remove();
+
+        if (index === scripts.length - 1)
+          this.removed.forEach((element) => {
+            this.shadowRoot.appendChild(element);
+          });
       });
     }
 
-    injectJs(src) {
+    injectJs(src, wrapper) {
       const script = document.createElement("script");
       script.innerText = src;
       script.setAttribute("class", "durian-generated-script");
-      this.shadowRoot.prepend(script);
+      wrapper.appendChild(script);
     }
 
     constructor() {
       super();
+
+      // TODO Change variable name `componentThis`
+      this.componentUUID = crypto.randomUUID();
+      window.__durianData__.componentThis[this.componentUUID] = this.shadowRoot;
+
       this.attachShadow({ mode: "open" });
       this.shadowRoot.innerHTML = innerHTML;
+
+      this.removed = [];
+      this.shadowRoot.querySelectorAll("*").forEach((element) => {
+        if (!element.tagName.includes("-")) return;
+
+        this.removed.push(element);
+        element.remove();
+      });
     }
   };
 }
